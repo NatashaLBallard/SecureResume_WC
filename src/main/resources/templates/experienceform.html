@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Create A Resume</title>
+    <title>Experience Form</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" />
@@ -10,18 +10,17 @@
 
 </head>
 <body>
+<h2>Experience</h2>
+
+
 <form action="#"
-      th:action="@{/process}"
-      th:object="${resume}"
+      th:action="@{/processexperience}"
+      th:object="${experience}"
       method="post">
     <input type="hidden" th:field="*{id}" />
 
 
 
-
-
-    <hr/>
-    <h2>Experience</h2>
     Position: <input type="text" th:field="*{position}" />
     <span th:if="${#fields.hasErrors('position')}"
           th:errors="*{position}"></span><br/>
@@ -45,17 +44,9 @@
 
 
 
-    <!--<hr/>-->
-    <!--<h2>Skills</h2>-->
-    <!--Skill: <input type="text" th:field="*{skill}" />-->
-    <!--<span th:if="${#fields.hasErrors('skill')}"-->
-          <!--th:errors="*{skill}"></span><br/>-->
-
-    <!--Level: <input type="text" th:field="*{level}" />-->
-    <!--<span th:if="${#fields.hasErrors('level')}"-->
-          <!--th:errors="*{level}"></span><br/>-->
 
     <input type="submit" value="Submit" />
+
 </form>
 </body>
 </html>

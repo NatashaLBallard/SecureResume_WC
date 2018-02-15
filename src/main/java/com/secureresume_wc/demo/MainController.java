@@ -44,6 +44,7 @@ public class MainController {
     public String showContactOnDisplay( Model model) {
         model.addAttribute("contacts", contactRepository.findAll());
         model.addAttribute("educations", educationRepository.findAll());
+        model.addAttribute("experiences", experienceRepository.findAll());
         return "display";
     }
 
@@ -64,8 +65,6 @@ public class MainController {
         resumeRepository.delete(id);
         return "redirect:/";
     }
-
-
 
 
 
@@ -166,6 +165,61 @@ public class MainController {
         educationRepository.delete(id);
         return "redirect:/";
     }
+
+
+
+
+
+
+    //Experience Information
+
+    @Autowired
+    ExperienceRepository    experienceRepository;
+
+    @RequestMapping("/viewexperience")
+    public String listExperienceInformation(Model model) {
+        model.addAttribute("experiences", experienceRepository.findAll());
+        return "experience";
+    }
+
+    @GetMapping("/addexperience")
+    public String experienceForm(Model model) {
+        model.addAttribute("experience", new Experience());
+        return "experienceform";
+    }
+
+    @PostMapping("/processexperience")
+    public String processExperienceForm(@Valid Experience experience, BindingResult result) {
+        if (result.hasErrors()) {
+            return "experienceform";
+        }
+        experienceRepository.save(experience);
+        return "redirect:/viewexperience";
+    }
+
+
+    @RequestMapping("/detail-experience/{id}")
+    public String showExperience(@PathVariable("id") long id, Model model) {
+        model.addAttribute("experience", experienceRepository.findOne(id));
+        return "showexperience";
+    }
+
+    @RequestMapping("/update-experience/{id}")
+    public String updateExperience(@PathVariable("id") long id, Model model){
+        model.addAttribute("experience", experienceRepository.findOne(id));
+        return "experienceform";
+    }
+
+    @RequestMapping("/delete-experience/{id}")
+    public String deleteExperience(@PathVariable("id") long id){
+        experienceRepository.delete(id);
+        return "redirect:/";
+    }
+
+
+
+
+
 
 
 

@@ -14,5 +14,33 @@
 <div th:replace="base :: navlinks"></div>
 <h2>Experience Page</h2>
 
+
+
+<a th:href="@{/addexperience}">Add Experience</a>
+
+<br/><br/>
+<h3>General</h3>
+<table border="1">
+    <tr>
+        <!--Experience-->
+        <th>Position</th>
+        <th>Company</th>
+        <th>Location</th>
+        <th>Duration</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="experience: ${experiences}">
+        <!--Experience-->
+        <td th:text="${experience.position}"></td>
+        <td th:text="${experience.company}"></td>
+        <td th:text="${experience.location}"></td>
+        <td th:text="${experience.duration}"></td>
+        <td th:text="${experience.description}"></td>
+    </tr>
+</table>
+
+
+
+
 </body>
 </html>

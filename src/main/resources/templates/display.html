@@ -50,26 +50,26 @@
     </tr>
 </table>
 
-<!--<br/><br/>-->
-<!--<h3>General</h3>-->
-<!--<table border="1">-->
-    <!--<tr>-->
-        <!--&lt;!&ndash;Experience&ndash;&gt;-->
-        <!--<th>Position</th>-->
-        <!--<th>Company</th>-->
-        <!--<th>Location</th>-->
-        <!--<th>Duration</th>-->
-        <!--<th>Description</th>-->
-    <!--</tr>-->
-    <!--<tr th:each="resume: ${resumes}">-->
-        <!--&lt;!&ndash;Experience&ndash;&gt;-->
-        <!--<td th:text="${resume.position}"></td>-->
-        <!--<td th:text="${resume.company}"></td>-->
-        <!--<td th:text="${resume.location}"></td>-->
-        <!--<td th:text="${resume.duration}"></td>-->
-        <!--<td th:text="${resume.description}"></td>-->
-    <!--</tr>-->
-<!--</table>-->
+<br/><br/>
+<h3>Experience</h3>
+<table border="1">
+    <tr>
+        <!--Experience-->
+        <th>Position</th>
+        <th>Company</th>
+        <th>Location</th>
+        <th>Duration</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="experience: ${experiences}">
+        <!--Experience-->
+        <td th:text="${experience.position}"></td>
+        <td th:text="${experience.company}"></td>
+        <td th:text="${experience.location}"></td>
+        <td th:text="${experience.duration}"></td>
+        <td th:text="${experience.description}"></td>
+    </tr>
+</table>
 
 <!--<br/><br/>-->
 <!--<h3>General</h3>-->

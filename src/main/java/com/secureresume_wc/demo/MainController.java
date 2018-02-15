@@ -45,6 +45,7 @@ public class MainController {
         model.addAttribute("contacts", contactRepository.findAll());
         model.addAttribute("educations", educationRepository.findAll());
         model.addAttribute("experiences", experienceRepository.findAll());
+        model.addAttribute("skills", skillRepository.findAll());
         return "display";
     }
 
@@ -174,10 +175,10 @@ public class MainController {
     //Experience Information
 
     @Autowired
-    ExperienceRepository    experienceRepository;
+    ExperienceRepository experienceRepository;
 
     @RequestMapping("/viewexperience")
-    public String listExperienceInformation(Model model) {
+    public String listExperience(Model model) {
         model.addAttribute("experiences", experienceRepository.findAll());
         return "experience";
     }
@@ -215,6 +216,58 @@ public class MainController {
         experienceRepository.delete(id);
         return "redirect:/";
     }
+
+
+
+
+
+
+
+    //Skill Information
+
+    @Autowired
+    SkillRepository skillRepository;
+
+    @RequestMapping("/viewskill")
+    public String listSkill(Model model) {
+        model.addAttribute("skills", skillRepository.findAll());
+        return "skill";
+    }
+
+    @GetMapping("/addskill")
+    public String skillForm(Model model) {
+        model.addAttribute("skill", new Skill());
+        return "skillform";
+    }
+
+    @PostMapping("/processskill")
+    public String processSkillForm(@Valid Skill skill, BindingResult result) {
+        if (result.hasErrors()) {
+            return "skillform";
+        }
+        skillRepository.save(skill);
+        return "redirect:/viewskill";
+    }
+
+
+    @RequestMapping("/detail-skill/{id}")
+    public String showSkill(@PathVariable("id") long id, Model model) {
+        model.addAttribute("skill", skillRepository.findOne(id));
+        return "showskill";
+    }
+
+    @RequestMapping("/update-skill/{id}")
+    public String updateSkill(@PathVariable("id") long id, Model model){
+        model.addAttribute("skill", skillRepository.findOne(id));
+        return "skillform";
+    }
+
+    @RequestMapping("/delete-skill/{id}")
+    public String deleteSkill(@PathVariable("id") long id){
+        skillRepository.delete(id);
+        return "redirect:/";
+    }
+
 
 
 

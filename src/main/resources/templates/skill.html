@@ -14,5 +14,25 @@
 <div th:replace="base :: navlinks"></div>
 <h2>Skill Page</h2>
 
+
+
+<a th:href="@{/addskill}">Add Skill</a>
+
+
+<table border="1">
+    <tr>
+        <!--Skills-->
+        <th>Skill</th>
+        <th>Level</th>
+    </tr>
+    <tr th:each="skill: ${skills}">
+        <!--Skills-->
+        <td th:text="${skill.singleSkill}"></td>
+        <td th:text="${skill.level}"></td>
+    </tr>
+</table>
+
+
+
 </body>
 </html>

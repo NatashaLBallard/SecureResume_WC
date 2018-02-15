@@ -74,25 +74,25 @@ public class Resume {
 //    @NotNull
 //    @Size(min=5)
 //    private String description;
-
-
-    //Skill --------------------------------------------------
-    @NotNull
-    @Size(min=3)
-    private String skill;
-
-    @NotNull
-    @Min(1)
-    @Max(5)
-    private String level;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
+//
+//
+//    //Skill --------------------------------------------------
+//    @NotNull
+//    @Size(min=3)
+//    private String skill;
+//
+//    @NotNull
+//    @Min(1)
+//    @Max(5)
+//    private String level;
+//
+//    public long getId() {
+//        return id;
+//    }
+//
+//    public void setId(long id) {
+//        this.id = id;
+//    }
 //
 //    public String getName() {
 //        return name;
@@ -197,20 +197,20 @@ public class Resume {
 //    public void setDescription(String description) {
 //        this.description = description;
 //    }
-
-    public String getSkill() {
-        return skill;
-    }
-
-    public void setSkill(String skill) {
-        this.skill = skill;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
+//
+//    public String getSkill() {
+//        return skill;
+//    }
+//
+//    public void setSkill(String skill) {
+//        this.skill = skill;
+//    }
+//
+//    public String getLevel() {
+//        return level;
+//    }
+//
+//    public void setLevel(String level) {
+//        this.level = level;
+//    }
 }

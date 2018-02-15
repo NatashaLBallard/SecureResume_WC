@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Create A Resume</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" />
+
+
+</head>
+<body>
+<form action="#"
+      th:action="@{/processskill}"
+      th:object="${skill}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+
+
+
+    <h2>Skills</h2>
+    Skill: <input type="text" th:field="*{singleSkill}" />
+    <span th:if="${#fields.hasErrors('singleSkill')}"
+    th:errors="*{singleSkill}"></span><br/>
+
+    Level: <input type="text" th:field="*{level}" />
+    <span th:if="${#fields.hasErrors('level')}"
+    th:errors="*{level}"></span><br/>
+
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>

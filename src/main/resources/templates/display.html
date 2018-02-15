@@ -71,20 +71,20 @@
     </tr>
 </table>
 
-<!--<br/><br/>-->
-<!--<h3>General</h3>-->
-<!--<table border="1">-->
-    <!--<tr>-->
-        <!--&lt;!&ndash;Skills&ndash;&gt;-->
-        <!--<th>Skill</th>-->
-        <!--<th>Level</th>-->
-    <!--</tr>-->
-    <!--<tr th:each="resume: ${resumes}">-->
-        <!--&lt;!&ndash;Skills&ndash;&gt;-->
-        <!--<td th:text="${resume.skill}"></td>-->
-        <!--<td th:text="${resume.level}"></td>-->
-    <!--</tr>-->
-<!--</table>-->
+<br/><br/>
+<h3>General</h3>
+<table border="1">
+    <tr>
+        <!--Skills-->
+        <th>Skill</th>
+        <th>Level</th>
+    </tr>
+    <tr th:each="skill: ${skills}">
+        <!--Skills-->
+        <td th:text="${skill.singleSkill}"></td>
+        <td th:text="${skill.level}"></td>
+    </tr>
+</table>
 
 
 <!--<br/><br/>-->

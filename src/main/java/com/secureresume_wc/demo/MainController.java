@@ -47,6 +47,7 @@ public class MainController {
         model.addAttribute("educations", educationRepository.findAll());
         model.addAttribute("experiences", experienceRepository.findAll());
         model.addAttribute("skills", skillRepository.findAll());
+        model.addAttribute("references", referenceRepository.findAll());
         return "display";
     }
 
@@ -320,6 +321,60 @@ public class MainController {
         skillRepository.delete(id);
         return "redirect:/";
     }
+
+
+
+
+
+
+
+
+
+    //Reference Information
+
+    @Autowired
+    ReferenceRepository referenceRepository;
+
+    @RequestMapping("/viewreference")
+    public String listReference(Model model) {
+        model.addAttribute("references", referenceRepository.findAll());
+        return "reference";
+    }
+
+    @GetMapping("/addreference")
+    public String referenceForm(Model model) {
+        model.addAttribute("reference", new Reference());
+        return "referenceform";
+    }
+
+    @PostMapping("/processreference")
+    public String processReferenceForm(@Valid Reference reference, BindingResult result) {
+        if (result.hasErrors()) {
+            return "referenceform";
+        }
+        referenceRepository.save(reference);
+        return "redirect:/viewreference";
+    }
+
+
+    @RequestMapping("/detail-reference/{id}")
+    public String showReference(@PathVariable("id") long id, Model model) {
+        model.addAttribute("reference", referenceRepository.findOne(id));
+        return "showreference";
+    }
+
+    @RequestMapping("/update-reference/{id}")
+    public String updateReference(@PathVariable("id") long id, Model model){
+        model.addAttribute("reference", referenceRepository.findOne(id));
+        return "referenceform";
+    }
+
+    @RequestMapping("/delete-reference/{id}")
+    public String deleteReference(@PathVariable("id") long id){
+        referenceRepository.delete(id);
+        return "redirect:/";
+    }
+
 
 
 

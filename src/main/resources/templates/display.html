@@ -89,7 +89,7 @@
 </table>
 
 <br/><br/>
-<h3>General</h3>
+<h3>Skill</h3>
 <table border="1">
     <tr>
         <!--Skills-->
@@ -102,6 +102,30 @@
         <td th:text="${skill.level}"></td>
     </tr>
 </table>
+
+
+<br/><br/>
+<h3>Reference</h3>
+<table border="1">
+    <tr>
+        <!--Skills-->
+        <th>Name</th>
+        <th>Position</th>
+        <th>Organization</th>
+        <th>Number</th>
+        <th>Email</th>
+    </tr>
+    <tr th:each="reference: ${references}">
+        <!--Skills-->
+        <td th:text="${reference.referenceName}"></td>
+        <td th:text="${reference.referencePosition}"></td>
+        <td th:text="${reference.referenceOrganization}"></td>
+        <td th:text="${reference.referencePhoneNumber}"></td>
+        <td th:text="${reference.referenceEmail}"></td>
+
+    </tr>
+</table>
+
 
 
 <!--<br/><br/>-->

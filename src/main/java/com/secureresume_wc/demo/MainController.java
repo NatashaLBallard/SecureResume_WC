@@ -43,7 +43,7 @@ public class MainController {
     @RequestMapping("/display")
     public String showContactOnDisplay( Model model) {
         model.addAttribute("contacts", contactRepository.findAll());
-        model.addAttribute("resumes", resumeRepository.findAll());
+        model.addAttribute("educations", educationRepository.findAll());
         return "display";
     }
 
@@ -122,11 +122,63 @@ public class MainController {
 
 
 
+    //Education Information
+
+    @Autowired
+    EducationRepository educationRepository;
+
+    @RequestMapping("/vieweducation")
+    public String listEducation(Model model) {
+        model.addAttribute("educations", educationRepository.findAll());
+        return "education";
+    }
+
+    @GetMapping("/addeducation")
+    public String educationForm(Model model) {
+        model.addAttribute("education", new Education());
+        return "educationform";
+    }
+
+    @PostMapping("/processeducation")
+    public String processEducationForm(@Valid Education education, BindingResult result) {
+        if (result.hasErrors()) {
+            return "educationform";
+        }
+        educationRepository.save(education);
+        return "redirect:/vieweducation";
+    }
+
+
+    @RequestMapping("/detail-education/{id}")
+    public String showEducation(@PathVariable("id") long id, Model model) {
+        model.addAttribute("education", educationRepository.findOne(id));
+        return "showeducation";
+    }
+
+    @RequestMapping("/update-education/{id}")
+    public String updateEducation(@PathVariable("id") long id, Model model){
+        model.addAttribute("education", educationRepository.findOne(id));
+        return "educationform";
+    }
+
+    @RequestMapping("/delete-education/{id}")
+    public String deleteContact(@PathVariable("id") long id){
+        educationRepository.delete(id);
+        return "redirect:/";
+    }
 
 
 
 
-    
+
+
+
+
+
+
+
+
+
 
 
     //Individual Pages

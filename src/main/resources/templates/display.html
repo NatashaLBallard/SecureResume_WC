@@ -42,11 +42,11 @@
         <th>School</th>
         <th>Year</th>
     </tr>
-    <tr th:each="resume: ${resumes}">
+    <tr th:each="education: ${educations}">
         <!-- Education-->
-        <td th:text="${resume.degree}"></td>
-        <td th:text="${resume.school}"></td>
-        <td th:text="${resume.year}"></td>
+        <td th:text="${education.degree}"></td>
+        <td th:text="${education.school}"></td>
+        <td th:text="${education.year}"></td>
     </tr>
 </table>
 

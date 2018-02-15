@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Create A Resume</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/process}"
+      th:object="${resume}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    <h2>General</h2>
+    Name: <input type="text" th:field="*{name}" />
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}"></span><br/>
+
+    Email: <input type="text" th:field="*{email}" />
+    <span th:if="${#fields.hasErrors('email')}"
+          th:errors="*{email}"></span><br/>
+
+    LinkedIn: <input type="text" th:field="*{linkedin}" />
+    <span th:if="${#fields.hasErrors('linkedin')}"
+          th:errors="*{linkedin}"></span><br/>
+
+    GitHub: <input type="text" th:field="*{github}" />
+    <span th:if="${#fields.hasErrors('github')}"
+          th:errors="*{github}"></span><br/>
+
+    Twitter: <input type="text" th:field="*{twitter}" />
+    <span th:if="${#fields.hasErrors('twitter')}"
+          th:errors="*{twitter}"></span><br/>
+    <br/>
+    <hr/>
+
+    <h2>Education</h2>
+    Degree: <input type="text" th:field="*{degree}" />
+    <span th:if="${#fields.hasErrors('degree')}"
+          th:errors="*{degree}"></span><br/>
+
+    School: <input type="text" th:field="*{school}" />
+    <span th:if="${#fields.hasErrors('school')}"
+          th:errors="*{school}"></span><br/>
+
+    Year: <input type="text" th:field="*{year}" />
+    <span th:if="${#fields.hasErrors('year')}"
+          th:errors="*{year}"></span><br/>
+    <br/>
+
+
+
+
+
+    <hr/>
+    <h2>Experience</h2>
+    Position: <input type="text" th:field="*{position}" />
+    <span th:if="${#fields.hasErrors('position')}"
+          th:errors="*{position}"></span><br/>
+
+    Company: <input type="text" th:field="*{company}" />
+    <span th:if="${#fields.hasErrors('company')}"
+          th:errors="*{company}"></span><br/>
+
+    Location: <input type="text" th:field="*{location}" />
+    <span th:if="${#fields.hasErrors('location')}"
+          th:errors="*{location}"></span><br/>
+
+    Duration: <input type="text" th:field="*{duration}" />
+    <span th:if="${#fields.hasErrors('duration')}"
+          th:errors="*{duration}"></span><br/>
+
+    Description: <textarea rows="3" th:field="*{description}" />
+    <span th:if="${#fields.hasErrors('description')}"
+          th:errors="*{description}"></span><br/>
+    <br/>
+
+
+
+    <hr/>
+    <h2>Skills</h2>
+    Skill: <input type="text" th:field="*{skill}" />
+    <span th:if="${#fields.hasErrors('skill')}"
+          th:errors="*{skill}"></span><br/>
+
+    Level: <input type="text" th:field="*{level}" />
+    <span th:if="${#fields.hasErrors('level')}"
+          th:errors="*{level}"></span><br/>
+
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>

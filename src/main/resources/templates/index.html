@@ -6,6 +6,46 @@
 </head>
 <body>
 
+<!--Start of NAVIGATION MENU-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" th:href="@{/}">Build-A-Resume</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/}">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/summary}">SUMMARY</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/contact}">CONTACT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/education}">EDUCATION</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/skill}">SKILL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/experience}">EXPERIENCE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/reference}">REFERENCE</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--End of NAVIGATION MENU-->
+
+<div th:replace="base :: navlinks"></div>
+<h2>Index Page</h2>
+
+
+
 <h1>Create Resume/CV</h1>
 
 <a th:href="resumeform">Add Resume</a>

@@ -61,7 +61,41 @@ public class MainController {
 
 
 
+    //Individual Pages
+    @RequestMapping("/summary")
+    public String summaryPage(){
+        return "summary";
+    }
 
+    @RequestMapping("/contact")
+    public String contactPage(){
+        return "contact";
+    }
+
+    @RequestMapping("/education")
+    public String educationPage(){
+        return "education";
+    }
+
+    @RequestMapping("/skill")
+    public String skillPage(){
+        return "skill";
+    }
+
+    @RequestMapping("/experience")
+    public String experiencePage(){
+        return "experience";
+    }
+
+    @RequestMapping("/reference")
+    public String referencePage(){
+        return "reference";
+    }
+
+    @RequestMapping("/view")
+    public String viewPage(){
+        return "view";
+    }
 
 
 }

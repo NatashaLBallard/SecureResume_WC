@@ -43,6 +43,7 @@ public class MainController {
     @RequestMapping("/display")
     public String showContactOnDisplay( Model model) {
         model.addAttribute("contacts", contactRepository.findAll());
+        model.addAttribute("summaries", summaryRepository.findAll());
         model.addAttribute("educations", educationRepository.findAll());
         model.addAttribute("experiences", experienceRepository.findAll());
         model.addAttribute("skills", skillRepository.findAll());
@@ -116,6 +117,58 @@ public class MainController {
         contactRepository.delete(id);
         return "redirect:/";
     }
+
+
+
+
+
+    //Summary Information
+
+    @Autowired
+    SummaryRepository summaryRepository;
+
+    @RequestMapping("/viewsummary")
+    public String listSummary(Model model) {
+        model.addAttribute("summaries", summaryRepository.findAll());
+        return "summary";
+    }
+
+    @GetMapping("/addsummary")
+    public String summaryForm(Model model) {
+        model.addAttribute("summary", new Summary());
+        return "summaryform";
+    }
+
+    @PostMapping("/processsummary")
+    public String processSummaryForm(@Valid Summary summary, BindingResult result) {
+        if (result.hasErrors()) {
+            return "summaryform";
+        }
+        summaryRepository.save(summary);
+        return "redirect:/viewsummary";
+    }
+
+
+    @RequestMapping("/detail-summary/{id}")
+    public String showSummary(@PathVariable("id") long id, Model model) {
+        model.addAttribute("summary", summaryRepository.findOne(id));
+        return "showsummary";
+    }
+
+    @RequestMapping("/update-summary/{id}")
+    public String updateSummary(@PathVariable("id") long id, Model model){
+        model.addAttribute("summary", summaryRepository.findOne(id));
+        return "summaryform";
+    }
+
+    @RequestMapping("/delete-summary/{id}")
+    public String deleteSummary(@PathVariable("id") long id){
+        summaryRepository.delete(id);
+        return "redirect:/";
+    }
+
+
+
 
 
 

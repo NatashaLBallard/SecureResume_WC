@@ -13,7 +13,7 @@
 <a href="/add">Add Resume</a>
 
 <br/><br/>
-<h3>General</h3>
+<h3>Contact</h3>
 <table border="1">
     <tr>
         <th>Name</th>
@@ -32,6 +32,23 @@
         <td th:text="${contact.twitter}"></td>
     </tr>
 </table>
+
+
+
+
+<br/><br/>
+<h3>Summary</h3>
+<table border="1">
+    <tr>
+        <th>Summary</th>
+    </tr>
+    <tr th:each="summary: ${summaries}">
+        <!--General Education-->
+        <td th:text="${summary.singleSummary}"></td>
+    </tr>
+</table>
+
+
 
 <br/><br/>
 <h3>Education</h3>

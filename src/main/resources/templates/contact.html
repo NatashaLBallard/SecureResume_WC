@@ -3,11 +3,46 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Contact</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" />
+
+
 </head>
 <body>
 
 <div th:replace="base :: navlinks"></div>
 <h2>Contact Information Page</h2>
+
+
+<a th:href="@{/addcontact}">Add Contact Information</a>
+
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>LinkedIn</th>
+        <th>GitHub</th>
+        <th>Twitter</th>
+        <th>Options</th>
+    </tr>
+
+    <tr th:each="contact: ${contacts}">
+        <!--General Education-->
+        <td th:text="${contact.name}"></td>
+        <td th:text="${contact.email}"></td>
+        <td th:text="${contact.linkedin}"></td>
+        <td th:text="${contact.github}"></td>
+        <td th:text="${contact.twitter}"></td>
+        <td>
+            <a th:href="@{/update-contact/{id}(id=${contact.id})}">Update</a>
+            <a th:href="@{/detail-contact/{id}(id=${contact.id})}">Details</a>
+            <a th:href="@{/delete-contact/{id}(id=${contact.id})}">Delete</a>
+        </td>
+    </tr>
+
+</table>
 
 </body>
 </html>

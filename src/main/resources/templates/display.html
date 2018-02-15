@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <title>Summary</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" />
+
+
 </head>
 <body>
 <a href="/add">Add Resume</a>
@@ -18,18 +23,18 @@
         <th>Twitter</th>
     </tr>
 
-    <tr th:each="resume: ${resumes}">
+    <tr th:each="contact: ${contacts}">
         <!--General Education-->
-        <td th:text="${resume.name}"></td>
-        <td th:text="${resume.email}"></td>
-        <td th:text="${resume.linkedin}"></td>
-        <td th:text="${resume.github}"></td>
-        <td th:text="${resume.twitter}"></td>
+        <td th:text="${contact.name}"></td>
+        <td th:text="${contact.email}"></td>
+        <td th:text="${contact.linkedin}"></td>
+        <td th:text="${contact.github}"></td>
+        <td th:text="${contact.twitter}"></td>
     </tr>
 </table>
 
 <br/><br/>
-<h3>General</h3>
+<h3>Education</h3>
 <table border="1">
     <tr>
         <!--Education-->
@@ -45,53 +50,53 @@
     </tr>
 </table>
 
-<br/><br/>
-<h3>General</h3>
-<table border="1">
-    <tr>
-        <!--Experience-->
-        <th>Position</th>
-        <th>Company</th>
-        <th>Location</th>
-        <th>Duration</th>
-        <th>Description</th>
-    </tr>
-    <tr th:each="resume: ${resumes}">
-        <!--Experience-->
-        <td th:text="${resume.position}"></td>
-        <td th:text="${resume.company}"></td>
-        <td th:text="${resume.location}"></td>
-        <td th:text="${resume.duration}"></td>
-        <td th:text="${resume.description}"></td>
-    </tr>
-</table>
+<!--<br/><br/>-->
+<!--<h3>General</h3>-->
+<!--<table border="1">-->
+    <!--<tr>-->
+        <!--&lt;!&ndash;Experience&ndash;&gt;-->
+        <!--<th>Position</th>-->
+        <!--<th>Company</th>-->
+        <!--<th>Location</th>-->
+        <!--<th>Duration</th>-->
+        <!--<th>Description</th>-->
+    <!--</tr>-->
+    <!--<tr th:each="resume: ${resumes}">-->
+        <!--&lt;!&ndash;Experience&ndash;&gt;-->
+        <!--<td th:text="${resume.position}"></td>-->
+        <!--<td th:text="${resume.company}"></td>-->
+        <!--<td th:text="${resume.location}"></td>-->
+        <!--<td th:text="${resume.duration}"></td>-->
+        <!--<td th:text="${resume.description}"></td>-->
+    <!--</tr>-->
+<!--</table>-->
 
-<br/><br/>
-<h3>General</h3>
-<table border="1">
-    <tr>
-        <!--Skills-->
-        <th>Skill</th>
-        <th>Level</th>
-    </tr>
-    <tr th:each="resume: ${resumes}">
-        <!--Skills-->
-        <td th:text="${resume.skill}"></td>
-        <td th:text="${resume.level}"></td>
-    </tr>
-</table>
+<!--<br/><br/>-->
+<!--<h3>General</h3>-->
+<!--<table border="1">-->
+    <!--<tr>-->
+        <!--&lt;!&ndash;Skills&ndash;&gt;-->
+        <!--<th>Skill</th>-->
+        <!--<th>Level</th>-->
+    <!--</tr>-->
+    <!--<tr th:each="resume: ${resumes}">-->
+        <!--&lt;!&ndash;Skills&ndash;&gt;-->
+        <!--<td th:text="${resume.skill}"></td>-->
+        <!--<td th:text="${resume.level}"></td>-->
+    <!--</tr>-->
+<!--</table>-->
 
 
-<br/><br/>
-<h3>General</h3>
-<table border="1">
-    <tr th:each="resume: ${resumes}">
-        <td>
-            <a th:href="@{/update/{id}(id=${resume.id})}">Update</a>
-            <a th:href="@{/detail/{id}(id=${resume.id})}">Details</a>
-            <a th:href="@{/delete/{id}(id=${resume.id})}">Delete</a>
-        </td>
-    </tr>
-</table>
+<!--<br/><br/>-->
+<!--<h3>General</h3>-->
+<!--<table border="1">-->
+    <!--<tr th:each="resume: ${resumes}">-->
+        <!--<td>-->
+            <!--<a th:href="@{/update/{id}(id=${resume.id})}">Update</a>-->
+            <!--<a th:href="@{/detail/{id}(id=${resume.id})}">Details</a>-->
+            <!--<a th:href="@{/delete/{id}(id=${resume.id})}">Delete</a>-->
+        <!--</td>-->
+    <!--</tr>-->
+<!--</table>-->
 </body>
 </html>

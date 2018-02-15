@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" />
+
+
 </head>
 <body>
 
@@ -36,6 +41,17 @@
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/reference}">REFERENCE</a>
             </li>
+
+            <li class ="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" th:href="@{/view}">VIEW
+                <span class="caret"></span></a>
+                <div class="dropdown-menu">
+                        <a class="dropdown-item" th:href="@{/completeresume}">Completed Resume</a>
+
+                        <a class="nav-link dropdown-item" th:href="@{/completecoverletter}">Completed Cover Letter</a>
+
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
@@ -48,11 +64,11 @@
 
 <h1>Create Resume/CV</h1>
 
-<a th:href="resumeform">Add Resume</a>
+<a th:href="@{/resumeform}">Add Resume</a>
 
-<a th:href="show">View Resume</a>
+<a th:href="@{/show}">View Resume</a>
 
-<a th:href="display">View Summary of Resume(s)</a>
+<a th:href="@{/display}">View Summary of Resume(s)</a>
 
 
 </body>

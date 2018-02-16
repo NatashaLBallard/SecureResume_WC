@@ -128,6 +128,12 @@ public class MainController {
     @Autowired
     SummaryRepository summaryRepository;
 
+//    @RequestMapping("/summary")
+//    public String viewSummary(Model model) {
+//        model.addAttribute("summaries", summaryRepository.findAll());
+//        return "summary";
+//    }
+
     @RequestMapping("/viewsummary")
     public String listSummary(Model model) {
         model.addAttribute("summaries", summaryRepository.findAll());
@@ -397,44 +403,44 @@ public class MainController {
 
 
     //Individual Pages
-    @RequestMapping("/summary")
-    public String summaryPage(){
-        return "summary";
-    }
-
-    @RequestMapping("/contact")
-    public String contactPage(){
-        return "contact";
-    }
-
-    @RequestMapping("/education")
-    public String educationPage(){
-        return "education";
-    }
-
-    @RequestMapping("/skill")
-    public String skillPage(){
-        return "skill";
-    }
-
-    @RequestMapping("/experience")
-    public String experiencePage(){
-        return "experience";
-    }
-
-    @RequestMapping("/reference")
-    public String referencePage(){
-        return "reference";
-    }
+//    @RequestMapping("/summary")
+//    public String summaryPage(){
+//        return "summary";
+//    }
+//
+//    @RequestMapping("/contact")
+//    public String contactPage(){
+//        return "contact";
+//    }
+//
+//    @RequestMapping("/education")
+//    public String educationPage(){
+//        return "education";
+//    }
+//
+//    @RequestMapping("/skill")
+//    public String skillPage(){
+//        return "skill";
+//    }
+//
+//    @RequestMapping("/experience")
+//    public String experiencePage(){
+//        return "experience";
+//    }
+//
+//    @RequestMapping("/reference")
+//    public String referencePage(){
+//        return "reference";
+//    }
 
     @RequestMapping("/view")
     public String viewPage(){
         return "view";
     }
-
-    @RequestMapping("/completeresume")
-    public String viewCompleteResume(){
-        return "completeresume";
-    }
+//
+//    @RequestMapping("/completeresume")
+//    public String viewCompleteResume(){
+//        return "completeresume";
+//    }
 
 }

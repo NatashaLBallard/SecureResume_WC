@@ -30,12 +30,17 @@
         <th>Email</th>
     </tr>
     <tr th:each="reference: ${references}">
-        <!--Experience-->
+        <!--Skills-->
         <td th:text="${reference.referenceName}"></td>
         <td th:text="${reference.referencePosition}"></td>
         <td th:text="${reference.referenceOrganization}"></td>
         <td th:text="${reference.referencePhoneNumber}"></td>
         <td th:text="${reference.referenceEmail}"></td>
+        <td>
+            <a th:href="@{/update-reference/{id}(id=${reference.id})}">Update</a>
+            <a th:href="@{/detail-reference/{id}(id=${reference.id})}">Details</a>
+            <a th:href="@{/delete-reference/{id}(id=${reference.id})}">Delete</a>
+        </td>
     </tr>
 </table>
 

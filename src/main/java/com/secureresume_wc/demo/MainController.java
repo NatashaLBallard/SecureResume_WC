@@ -5,11 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
@@ -18,10 +14,60 @@ import javax.validation.Valid;
 @Controller
 public class MainController {
 
+
+    @Autowired
+    private UserService userService;
+
+
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String processLoginPage(
+            @Valid @ModelAttribute("user") User user,
+            BindingResult result,
+            Model model) {
+
+        model.addAttribute("user", user);
+        if (result.hasErrors()) {
+            return "login";
+        } else {
+            userService.saveUser(user);
+        }
+        return "index";
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String showRegistrationPage(Model model) {
+        model.addAttribute("user", new User());
+        return "registration";
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String processRegistrationPage(
+            @Valid @ModelAttribute("user") User user,
+            BindingResult result,
+            Model model) {
+
+        model.addAttribute("user", user);
+        if (result.hasErrors()) {
+            return "registration";
+        } else {
+            userService.saveUser(user);
+            model.addAttribute("message",
+                    "User Account Successfully Created");
+        }
+        return "index";
+    }
+
+
+
+
     @Autowired
     ResumeRepository resumeRepository;
-
-
 
 
     @RequestMapping("/")

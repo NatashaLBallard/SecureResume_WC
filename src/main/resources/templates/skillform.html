@@ -10,6 +10,9 @@
 
 </head>
 <body>
+<div th:replace="base :: navbarmenu"></div>
+
+
 <form action="#"
       th:action="@{/processskill}"
       th:object="${skill}"
@@ -18,7 +21,7 @@
 
 
 
-    <h2>Skills</h2>
+    <h2>Skill Page</h2>
     Skill: <input type="text" th:field="*{singleSkill}" />
     <span th:if="${#fields.hasErrors('singleSkill')}"
     th:errors="*{singleSkill}"></span><br/>

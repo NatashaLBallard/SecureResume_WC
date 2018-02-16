@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Index Page</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" />
@@ -10,72 +10,24 @@
 
 </head>
 <body>
-
-<!--Start of NAVIGATION MENU-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" th:href="@{/}">
-        <img src="https://www.resumeviking.com/wp-content/uploads/2018/01/ResumeIO-logo.png"
-             alt="logo pic" height="100px" width="100px" />
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" th:href="@{/}">HOME <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/viewsummary}">SUMMARY</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/viewcontact}">CONTACT</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/vieweducation}">EDUCATION</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/viewskill}">SKILL</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/viewexperience}">EXPERIENCE</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/viewreference}">REFERENCE</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/viewcoverletter}">COVER LETTER</a>
-            </li>
-            <li class ="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" th:href="@{/view}">VIEW
-                <span class="caret"></span></a>
-                <div class="dropdown-menu">
-                        <a class="dropdown-item" th:href="@{/completeresume}">Completed Resume</a>
-
-                        <a class="nav-link dropdown-item" th:href="@{/completecoverletter}">Completed Cover Letter</a>
-
-                </div>
-            </li>
-
-        </ul>
-    </div>
-</nav>
-<!--End of NAVIGATION MENU-->
-
-<div th:replace="base :: navlinks"></div>
-<h2>Index Page</h2>
+<div th:replace="base :: navbarmenu"></div>
 
 
+<h1>Welcome to Resume.io</h1>
+<!--<div th:replace="base :: navlinks"></div>-->
 
-<h1>Create Resume/CV</h1>
+<br/><br/>
 
-<a th:href="@{/resumeform}">Add Resume</a>
+<div>
+<h3>Create Resume/CV</h3>
 
-<a th:href="@{/show}">View Resume</a>
 
-<a th:href="@{/display}">View Summary of Resume(s)</a>
+<p><a th:href="@{/addsummary}">Create A Resume</a></p>
 
+<p><a th:href="@{/addcoverletter}">Create A Cover Letter</a></p>
+
+<p><a th:href="@{/display}">View Resume and Cover Letter</a></p>
+</div>
 
 </body>
 </html>

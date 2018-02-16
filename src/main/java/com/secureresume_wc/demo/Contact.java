@@ -29,14 +29,17 @@ public class Contact {
 
     @NotNull
     @Size(min=5)
+    @URL
     private String linkedin;
 
     @NotNull
     @Size(min=5)
+    @URL
     private String github;
 
     @NotNull
     @Size(min=5)
+    @URL
     private String twitter;
 
     @URL

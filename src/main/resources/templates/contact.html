@@ -10,9 +10,12 @@
 
 </head>
 <body>
+<div th:replace="base :: navbarmenu"></div>
 
-<div th:replace="base :: navlinks"></div>
+
 <h2>Contact Information Page</h2>
+<div th:replace="base :: navlinks"></div><br/><br/>
+
 
 
 <a th:href="@{/addcontact}">Add Contact Information</a>

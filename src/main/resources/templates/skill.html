@@ -10,15 +10,18 @@
 
 </head>
 <body>
+<div th:replace="base :: navbarmenu"></div>
 
-<div th:replace="base :: navlinks"></div>
+
 <h2>Skill Page</h2>
+<div th:replace="base :: navlinks"></div><br/><br/>
+
 
 
 
 <a th:href="@{/addskill}">Add Skill</a>
 
-
+<h3>Skill</h3>
 <table border="1">
     <tr>
         <!--Skills-->

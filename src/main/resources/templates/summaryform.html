@@ -10,6 +10,9 @@
 
 </head>
 <body>
+<div th:replace="base :: navbarmenu"></div>
+
+
 <form action="#"
       th:action="@{/processsummary}"
       th:object="${summary}"

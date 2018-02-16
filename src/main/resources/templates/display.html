@@ -21,10 +21,13 @@
         <th>LinkedIn</th>
         <th>GitHub</th>
         <th>Twitter</th>
+        <th>Image</th>
+        <th>Options</th>
     </tr>
 
     <tr th:each="contact: ${contacts}">
         <!--General Education-->
+        <td><img th:src="(${contact.image}==null)?'http://simpleicon.com/wp-content/uploads/user1.png':${contact.image}" alt="logo/face pic" width="100px" height="100px"/></td>
         <td th:text="${contact.name}"></td>
         <td th:text="${contact.email}"></td>
         <td th:text="${contact.linkedin}"></td>

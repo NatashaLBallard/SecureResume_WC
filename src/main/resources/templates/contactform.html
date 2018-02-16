@@ -38,6 +38,11 @@
           th:errors="*{twitter}"></span><br/>
     <br/>
 
+    Image: <input type="url" th:field="*{image}" />
+    <span th:if="${#fields.hasErrors('image')}"
+          th:errors="*{image}"></span><br/>
+    <br/>
+
     <input type="submit" value="Submit" />
 </form>
 </body>

@@ -1,5 +1,7 @@
 package com.secureresume_wc.demo;
 
+import org.hibernate.validator.constraints.URL;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,6 +38,10 @@ public class Contact {
     @NotNull
     @Size(min=5)
     private String twitter;
+
+    @URL
+    private String image;
+
 
     public long getId() {
         return id;
@@ -83,5 +89,13 @@ public class Contact {
 
     public void setTwitter(String twitter) {
         this.twitter = twitter;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

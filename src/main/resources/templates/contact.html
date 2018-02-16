@@ -25,6 +25,7 @@
         <th>LinkedIn</th>
         <th>GitHub</th>
         <th>Twitter</th>
+        <th>Image</th>
         <th>Options</th>
     </tr>
 
@@ -35,6 +36,7 @@
         <td th:text="${contact.linkedin}"></td>
         <td th:text="${contact.github}"></td>
         <td th:text="${contact.twitter}"></td>
+        <td><img th:src="(${contact.image}==null)?'http://simpleicon.com/wp-content/uploads/user1.png':${contact.image}" alt="logo/face pic" width="100px" height="100px"/></td>
         <td>
             <a th:href="@{/update-contact/{id}(id=${contact.id})}">Update</a>
             <a th:href="@{/detail-contact/{id}(id=${contact.id})}">Details</a>

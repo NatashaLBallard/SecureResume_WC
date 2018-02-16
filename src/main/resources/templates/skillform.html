@@ -28,19 +28,29 @@
     <!--th:errors="*{level}"></span><br/>-->
 
     Level:
+    <!--<div class="col-3">-->
+        <!--<label id="Level">Level</label>-->
+        <!--<label class="radio-inline" id="beginner" th:field="*{level}">-->
+            <!--<input type="radio" name="levelRadio" value="beginner"/>Beginner-->
+        <!--</label>-->
+        <!--<label class="radio-inline" id="intermediate" th:field="*{level}">-->
+            <!--<input type="radio" name="levelRadio" value="Intermediate"/>Intermediate-->
+        <!--</label>-->
+        <!--<label class="radio-inline" id="proficient" th:field="*{level}">-->
+            <!--<input type="radio" name="levelRadio" value="Proficient"/>Proficient-->
+        <!--</label>-->
+        <!--<span th:if="${#fields.hasErrors('level')}" th:errors="*{level}"></span>-->
+
+    <!--</div>-->
+
     <div class="col-3">
-
-        <label class="radio-inline" id="beginner" th:field="*{level}">
-            <input type="radio" name="levelRadio" value="beginner"/>Beginner
-        </label>
-        <label class="radio-inline" id="intermediate" th:field="*{level}">
-            <input type="radio" name="levelRadio" value="Intermediate"/>Intermediate
-        </label>
-        <label class="radio-inline" id="proficient" th:field="*{level}">
-            <input type="radio" name="levelRadio" value="Proficient"/>Proficient
-        </label>
+        <label id="level">Level</label>
+        <Select th:field="*{level}">
+            <option value="Beginner" >Beginner</option>
+            <option value="Intermediate" >Intermediate</option>
+            <option value="Proficient" >Proficient</option>
+        </Select>
         <span th:if="${#fields.hasErrors('level')}" th:errors="*{level}"></span>
-
     </div>
 
     <input type="submit" value="Submit" />

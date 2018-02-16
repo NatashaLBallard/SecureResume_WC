@@ -25,8 +25,6 @@ public class Skill {
     private String singleSkill;
 
     @NotNull
-    @Min(1)
-    @Max(5)
     private String level;
 
 

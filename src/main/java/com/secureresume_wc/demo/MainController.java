@@ -487,7 +487,16 @@ public class MainController {
 
 
 
-
+    @RequestMapping("/displayresume")
+    public String showEntireResume( Model model) {
+        model.addAttribute("contacts", contactRepository.findAll());
+        model.addAttribute("summaries", summaryRepository.findAll());
+        model.addAttribute("educations", educationRepository.findAll());
+        model.addAttribute("experiences", experienceRepository.findAll());
+        model.addAttribute("skills", skillRepository.findAll());
+        model.addAttribute("references", referenceRepository.findAll());
+        return "displayresume";
+    }
 
 
 

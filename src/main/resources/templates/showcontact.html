@@ -13,10 +13,10 @@
 <div th:replace="base :: navbarmenu"></div><br/><br/>
 
 
-<a href="/viewcontact">Show All Contacts</a><br/><br/>
+<a href="/viewcontact">Show All Contact Information</a><br/><br/>
 
 
-<h2>General</h2>
+<h2>Contact Information</h2>
 <span><img th:src="(${contact.image}==null)?'http://simpleicon.com/wp-content/uploads/user1.png':${contact.image}" alt="logo/face pic" width="100px" height="100px"/></span><br/>
 <span th:text="${contact.name}"></span><br/>
 <a th:href="@{'mailto:'+${contact.email}}" target="_blank"><span th:text="${contact.email}"></span></a><br/>

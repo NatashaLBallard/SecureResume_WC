@@ -23,9 +23,25 @@
     <span th:if="${#fields.hasErrors('singleSkill')}"
     th:errors="*{singleSkill}"></span><br/>
 
-    Level: <input type="text" th:field="*{level}" />
-    <span th:if="${#fields.hasErrors('level')}"
-    th:errors="*{level}"></span><br/>
+    <!--Level: <input type="text" th:field="*{level}" />-->
+    <!--<span th:if="${#fields.hasErrors('level')}"-->
+    <!--th:errors="*{level}"></span><br/>-->
+
+    Level:
+    <div class="col-3">
+
+        <label class="radio-inline" id="beginner" th:field="*{level}">
+            <input type="radio" name="levelRadio" value="beginner"/>Beginner
+        </label>
+        <label class="radio-inline" id="intermediate" th:field="*{level}">
+            <input type="radio" name="levelRadio" value="Intermediate"/>Intermediate
+        </label>
+        <label class="radio-inline" id="proficient" th:field="*{level}">
+            <input type="radio" name="levelRadio" value="Proficient"/>Proficient
+        </label>
+        <span th:if="${#fields.hasErrors('level')}" th:errors="*{level}"></span>
+
+    </div>
 
     <input type="submit" value="Submit" />
 </form>

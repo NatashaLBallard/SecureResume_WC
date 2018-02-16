@@ -159,6 +159,34 @@
 </table>
 
 
+<br/><br/>
+<h3>Cover Letters</h3>
+<table border="1">
+    <tr>
+        <th>Intro Paragraph</th>
+        <th>Paragraph One</th>
+        <th>Paragraph Two</th>
+        <th>Paragraph Three</th>
+        <th>Outro Paragraph</th>
+    </tr>
+
+    <tr th:each="coverLetter: ${coverletters}">
+        <!--General Education-->
+        <td th:text="${coverLetter.paragraphIntro}"></td>
+        <td th:text="${coverLetter.paragraphOne}"></td>
+        <td th:text="${coverLetter.paragraphTwo}"></td>
+        <td th:text="${coverLetter.paragraphThree}"></td>
+        <td th:text="${coverLetter.paragraphOutro}"></td>
+        <td>
+            <a th:href="@{/update-coverletter/{id}(id=${coverLetter.id})}">Update</a>
+            <a th:href="@{/detail-coverletter/{id}(id=${coverLetter.id})}">Details</a>
+            <a th:href="@{/delete-coverletter/{id}(id=${coverLetter.id})}">Delete</a>
+        </td>
+    </tr>
+
+</table>
+
+
 
 <!--<br/><br/>-->
 <!--<h3>General</h3>-->

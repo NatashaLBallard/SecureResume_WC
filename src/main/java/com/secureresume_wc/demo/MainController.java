@@ -392,6 +392,56 @@ public class MainController {
 
 
 
+    //CoverLetter Information
+
+    @Autowired
+    CoverLetterRepository coverLetterRepository;
+
+    @RequestMapping("/viewcoverletter")
+    public String listCoverLetter(Model model) {
+        model.addAttribute("coverletters", coverLetterRepository.findAll());
+        return "coverletter";
+    }
+
+    @GetMapping("/addcoverletter")
+    public String coverLetterForm(Model model) {
+        model.addAttribute("coverletter", new CoverLetter());
+        return "coverletterform";
+    }
+
+    @PostMapping("/processcoverletter")
+    public String processCoverLetterForm(@Valid CoverLetter coverLetter, BindingResult result) {
+        if (result.hasErrors()) {
+            return "coverletterform";
+        }
+        coverLetterRepository.save(coverLetter);
+        return "redirect:/viewcoverletter";
+    }
+
+
+    @RequestMapping("/detail-coverletter/{id}")
+    public String showCoverLetter(@PathVariable("id") long id, Model model) {
+        model.addAttribute("coverletter", coverLetterRepository.findOne(id));
+        return "showcoverletter";
+    }
+
+    @RequestMapping("/update-coverletter/{id}")
+    public String updateCoverLetter(@PathVariable("id") long id, Model model){
+        model.addAttribute("coverletter", coverLetterRepository.findOne(id));
+        return "coverletterform";
+    }
+
+    @RequestMapping("/delete-coverletter/{id}")
+    public String deleteCoverLetter(@PathVariable("id") long id){
+        coverLetterRepository.delete(id);
+        return "redirect:/";
+    }
+
+
+
+
+
+
 
 
 
